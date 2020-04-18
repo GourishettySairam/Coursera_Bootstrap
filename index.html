@@ -30,8 +30,8 @@
 	                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
 	                </ul>
 									<span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
+                    <a id="openLogin" >
+                    <span  class="fa fa-sign-in"></span> Login</a>
                 </span>
 									</div>
 	        </div>
@@ -41,11 +41,11 @@
 				<div class="modal-dialog modal-lg" role="content">
 
 						<div class="modal-content">
-								<div class="modal-header">
-										<h4 class="modal-title">Login </h4>
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<div class="modal-header  navbar-dark">
+										<h4 class="modal-title text-light" >Login </h4>
+										<button type="button " class="close" id="closeLogin" >&times;</button>
 								</div>
-								<div class="modal-body">
+								<div class="modal-body"  style="background-color:#9575CD">
 										<form>
 												<div class="form-row">
 														<div class="form-group col-sm-4">
@@ -78,11 +78,11 @@
 			<div class="modal-dialog modal-lg" role="content">
 
 			  <div class="modal-content">
-			      <div class="modal-header">
+			      <div class="modal-header navbar-dark text-light">
 			          <h4 class="modal-title  col-12 col-sm-10 ">Reserve a Table </h4>
-			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <button type="button" id="closeReserve" class="close" >&times;</button>
 			      </div>
-			      <div class="modal-body">
+			      <div class="modal-body" style="background-color:#9575CD" >
 			          <form>
 			          <div class="form-group row">
 			            <label class="col-form-label col-md-2" > Number of Guests </label>
@@ -146,7 +146,7 @@
 							 </div>
 							 <div class="col-12 col-sm-3 align-self-center">
 								 <span class="navbar-text">
-									 <a data-toggle="modal" class="btn bg-warning" data-target="#reserveModal">
+									 <a id="openReserve"  class="btn bg-warning" >
 									 Reserve a Table</a>
 							 </span>
 							 </div>
@@ -341,6 +341,26 @@
 			});
 
 		});
+		$('#closeLogin').click(function()
+	{
+		$('#loginModal').modal('hide');
+	})
+
+	$('#openLogin').click(function()
+{
+	$('#loginModal').modal('show');
+})
+
+$('#closeReserve').click(function()
+{
+$('#reserveModal').modal('hide');
+})
+
+$('#openReserve').click(function()
+{
+$('#reserveModal').modal('show');
+})
+
 		</script>
 
 
